@@ -6,4 +6,5 @@
       切记： 配置了环境变量一定要重启系统生效，不能像linux系统可以使用source ~/.bashrc生效。
       配置+变量 ROCKET_HOME ,值是binary.zip 解压的路径。 path 里面添加： %ROCKET_HOME%\bin
       到bin目录下： start mqnamesrv.cmd 启动时再次报错： 找不到或无法加载主类 files\rocketmq-all-4.6.1-bin-release\bin\files\rocketmq-all-4.6.1-bin-release\lib
-      
+      错误可能在于java的安装目录含有空格：d:/program files/xxx，重新把jdk存放到无空格的目录。
+    
