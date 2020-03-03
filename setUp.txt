@@ -2,9 +2,18 @@
     属于apache， 下载地址：http://rocketmq.apache.org/release_notes/release-notes-4.6.1/
 2. 安装和启动
     a. 配置环境变量
-      要配置系统环境变量： ROCKET_HOME，否则启动的时候会报错： please set ROCKET_HOME variable in your environment .
-      切记： 配置了环境变量一定要重启系统生效，不能像linux系统可以使用source ~/.bashrc生效。
-      配置+变量 ROCKET_HOME ,值是binary.zip 解压的路径。 path 里面添加： %ROCKET_HOME%\bin
-      到bin目录下： start mqnamesrv.cmd 启动时再次报错： 找不到或无法加载主类 files\rocketmq-all-4.6.1-bin-release\bin\files\rocketmq-all-4.6.1-bin-release\lib
-      错误可能在于java的安装目录含有空格：d:/program files/xxx，重新把jdk存放到无空格的目录。
-    
+        要配置系统环境变量： ROCKET_HOME，否则启动的时候会报错： please set ROCKET_HOME variable in your environment。
+        切记： 配置了环境变量一定要重启系统生效，不能像linux系统可以使用source ~/.bashrc生效。
+        配置+变量 ROCKET_HOME ,值是binary.zip 解压的路径，不需要指定到bin目录。 path 里面添加： %ROCKET_HOME%\bin。
+    b.启动 nameserver:
+        到bin目录下： start mqnamesrv.cmd 启动时再次报错： 找不到或无法加载主类 files\rocketmq-all-4.6.1-bin-release\bin\files\rocketmq-all-4.6.1-bin-release\lib。
+        错误可能在于java的安装目录含有空格：d:/program files/xxx，重新把jdk存放到无空格的目录。同时，也罢rocketmq也从program files这个含有
+        空格的目录拿出来。两个都不要放到含空格的目录里面。执行即可成功。
+    c.启动broker :
+        到bin目录下：start mqbroker.cmd -n 127.0.0.1:9876 autoCreateTopicEnable=true
+        网上说runbroker.cmd占用的jvm内存比较大，一般pc没有这么，改小点，我的pc就这么叼。
+    d.安装界面化控制台：
+        第一，克隆代码： 进入到D:\eclipse-workspace： git clone https://github.com/apache/rocketmq-externals.git。
+        
+      
+      
