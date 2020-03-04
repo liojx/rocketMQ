@@ -14,6 +14,10 @@
         网上说runbroker.cmd占用的jvm内存比较大，一般pc没有这么，改小点，我的pc就这么叼。
     d.安装界面化控制台：
         第一，克隆代码： 进入到D:\eclipse-workspace： git clone https://github.com/apache/rocketmq-externals.git。
-        
+        第二，更改配置：修改D:\eclipse-workspace\rocketmq-externals-master\rocketmq-console\src\main\resources\application.properties
+        server.port=9999
+        rocketmq.config.namesrvAddr=127.0.0.1:9876
+        第二，启动jar包：进入到D:\eclipse-workspace\rocketmq-externals-master\rocketmq-console\target，执行jar命令：java -jar xxx
+        第三，访问：http://127.0.0.1:9999/#/
       
       
